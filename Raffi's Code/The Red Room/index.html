@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Red Room</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="opening-screen">
+  <h1 id="game-title">The Red Room</h1>
+  <p id="subtitle">Some rooms never forget...</p>
+  <button id="start-btn">Enter</button>
+  <audio id="ambient" src="audio/whispers.mp3" autoplay loop></audio>
+  <canvas id="red-smoke"></canvas>
+</div>
+  <div id="game-container">
+    <div id="scene">
+      <img id="scene-image" src="images/bedroom.jpg" alt="Room" />
+      <div id="hotspots"></div>
+    </div>
+    <div id="dialogue-box"></div>
+    <button id="next-room-btn" style="display: none;">Next Room</button>
+  </div>
+  <audio id="whisper" src="audio/whisper.mp3"></audio>
+  <audio id="door" src="audio/door-creak.mp3"></audio>
+  <audio id="scream" src="audio/scream.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

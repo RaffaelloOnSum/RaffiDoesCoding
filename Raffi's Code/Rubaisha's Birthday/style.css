@@ -1,0 +1,146 @@
+:root {
+    --background-color: #05021f;
+    --main-text-color: #ffffff;
+    --neon-pink: #ff3aff;
+    --neon-cyan: #00ffff;
+    --neon-purple: #b075ff;
+    --border-glow-color: rgba(255, 58, 255, 0.7);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+}
+
+#matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.35) 1px, transparent 1px, transparent 4px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    border: 3px solid var(--neon-pink);
+    box-shadow: 0 0 15px var(--border-glow-color), 0 0 25px var(--border-glow-color) inset;
+    padding: 30px;
+    text-align: center;
+    background: rgba(12, 12, 12, 0.6);
+    animation: border-flicker 3s infinite alternate;
+    z-index: 1;
+}
+
+.header {
+    font-size: 3em;
+    position: relative;
+    margin-bottom: 25px;
+    animation: glitch 1.5s linear infinite;
+}
+
+.header::before,
+.header::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.header::before {
+    left: 3px;
+    text-shadow: -2px 0 var(--neon-cyan);
+    animation: glitch-subtle 2s infinite linear reverse;
+}
+
+.header::after {
+    left: -3px;
+    text-shadow: -2px 0 var(--neon-purple);
+    animation: glitch-subtle 2.5s infinite linear;
+}
+
+.wish-text {
+    font-size: 1.6em;
+    margin: 25px 0;
+    color: #eee;
+}
+
+.hidden-message {
+    font-size: 1.1em;
+    color: #999;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.hidden-message.visible {
+    opacity: 1;
+}
+
+.interactive-heart {
+    font-size: 3em;
+    cursor: pointer;
+    margin-top: 20px;
+    color: var(--neon-pink);
+    transition: transform 0.2s ease-in-out, text-shadow 0.2s;
+}
+
+.interactive-heart:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px var(--neon-pink);
+}
+
+.interactive-heart.beating {
+    animation: beat 0.5s ease-in-out;
+}
+
+.status-log-container {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: var(--neon-cyan);
+    height: 20px;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+.trademark {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 1em;
+    color: #555;
+    z-index: 5;
+}
+
+@keyframes glitch { 2%,64%{transform:translate(3px,0) skew(0deg)}4%,60%{transform:translate(-3px,0) skew(0deg)}62%{transform:translate(0,0) skew(5deg)}}
+@keyframes glitch-subtle { 0%{clip-path:inset(80% 0 15% 0)}20%{clip-path:inset(40% 0 55% 0)}40%{clip-path:inset(18% 0 2% 0)}60%{clip-path:inset(93% 0 1% 0)}80%{clip-path:inset(57% 0 30% 0)}100%{clip-path:inset(2% 0 88% 0)}}
+@keyframes border-flicker { 0%,18%,22%,25%,53%,57%,100%{box-shadow:0 0 15px var(--border-glow-color),0 0 25px var(--border-glow-color) inset}20%,24%,55%{box-shadow:none}}
+@keyframes beat { 0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+@keyframes blink { from, to { opacity: 1 } 50% { opacity: 0 } }

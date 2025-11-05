@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Pre-loader / Intro Animation -->
+    <div id="preloader">
+        <div id="preloader-text"></div><span class="cursor">_</span>
+    </div>
+
+    <!-- Main content, hidden until pre-loader is done -->
+    <div id="main-content" class="hidden">
+        <canvas id="matrix-bg"></canvas>
+
+        <div class="container">
+            <div class="header" data-text="Sweet 17">
+                Sweet 17
+            </div>
+            
+            <p class="wish-text">
+                Happy Birthday, Ruby.
+            </p>
+            
+            <p class="hidden-message" id="hiddenMessage">
+                I would've worked on this harder if we were still in contact... but we're not.
+            </p>
+            
+            <div class="interactive-heart" id="interactiveHeart">
+                &lt;3
+            </div>
+            
+            <div class="status-log-container">
+                <span id="status-log"></span><span class="cursor log-cursor">_</span>
+            </div>
+        </div>
+
+        <div class="trademark">
+            raffi™
+        </div>
+
+        <!-- Music and Controls -->
+        <div id="music-controls">
+            <button id="play-pause-btn">Play Song</button>
+        </div>
+        <audio id="background-song" loop>
+            <!-- IMPORTANT: Replace this src with a link to your own song file (e.g., an mp3) -->
+            <source src="Liana Flores - rises the moon.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

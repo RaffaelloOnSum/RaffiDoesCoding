@@ -1,0 +1,72 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background color */
+    color: #fff;
+}
+
+/* Header styles */
+header {
+    background-color: #8B0000; /* Dark red background color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+}
+
+/* Heading styles */
+h2 {
+    color: #8B0000; /* Dark red color */
+    border-bottom: 2px solid #8B0000; /* Dark red border */
+    padding-bottom: 5px;
+}
+
+/* Paragraph styles */
+p {
+    line-height: 1.6;
+}
+
+/* Footer styles */
+footer {
+    background-color: #8B0000; /* Dark red background color */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Button styles */
+.button {
+    background-color: #8B0000; /* Dark red background color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #B22222; /* Red shade on hover */
+}
+
+/* Image styles */
+.templar-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}

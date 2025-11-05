@@ -1,0 +1,81 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6b73c; /* Ginger orange color */
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+    background-color: #e69542; /* Lighter shade of ginger orange */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+}
+
+/* Heading styles */
+h2 {
+    color: #e69542; /* Lighter shade of ginger orange */
+    border-bottom: 2px solid #e69542; /* Lighter shade of ginger orange */
+    padding-bottom: 5px;
+}
+
+/* Paragraph styles */
+p {
+    line-height: 1.6;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    /* position: fixed; Remove this line */
+    /* bottom: 0; Remove this line */
+    /* width: 100%; Remove this line */
+}
+
+/* Image styles */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Button styles */
+button {
+    margin-top: 20px; /* Adjust this value as needed */
+    background-color: #e69542; /* Lighter shade of ginger orange */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d5803c; /* Darker shade of ginger orange on hover */
+}

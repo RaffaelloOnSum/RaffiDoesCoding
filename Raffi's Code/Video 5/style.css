@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+caption {
+    caption-side: top;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+tfoot td {
+    font-style: italic;
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li, ol li {
+    margin-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ol {
+    counter-reset: my-counter;
+    background-color: #f9f9f9;
+    border: 1px solid teal;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ol li {
+    color: teal;
+}
+
+ol[type="I"] {
+    list-style-type: upper-roman;
+}
+
+dl {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid teal;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+dl dt {
+    font-weight: bold;
+    color: teal;
+}
+
+dl dd {
+    margin-left: 20px;
+    color: #333;
+}
+
+/* Colors */
+
+th, td {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tfoot {
+    background-color: #e0e0e0;
+}
+
+/* Teal and Blue Colors */
+
+header {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+table {
+    border: 2px solid teal;
+}
+
+th, td {
+    border: 1px solid teal;
+}
+
+tfoot {
+    border-top: 2px solid teal;
+    color: teal;
+}

@@ -1,0 +1,172 @@
+:root {
+    --background-color: #000000;
+    --text-color: #EAEAEA;
+    --neon-pink: #F400A1;
+    --neon-blue: #00BFFF;
+    --neon-purple: #9400D3;
+    --glow-color: rgba(244, 0, 161, 0.6);
+    --dark-container: rgba(10, 0, 20, 0.7);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    margin: 0;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+/* --- Pre-loader --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    font-size: 1.5em;
+    color: var(--neon-blue);
+    transition: opacity 1s ease-out;
+}
+#preloader.fade-out {
+    opacity: 0;
+}
+
+/* --- Main Content --- */
+#main-content.hidden {
+    display: none;
+}
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#matrix-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    border: 3px solid var(--neon-pink);
+    box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color) inset;
+    padding: 30px;
+    text-align: center;
+    background: var(--dark-container);
+    backdrop-filter: blur(5px);
+    animation: border-flicker 3s infinite alternate;
+    z-index: 1;
+}
+
+.container.screen-glitch {
+    animation: screen-glitch-effect 0.2s linear;
+}
+
+.header {
+    font-size: 3em; position: relative; margin-bottom: 25px;
+    animation: glitch 1.5s linear infinite;
+}
+.header::before, .header::after {
+    content: attr(data-text); position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: transparent; overflow: hidden;
+}
+.header::before {
+    left: 3px; text-shadow: -2px 0 var(--neon-blue);
+    animation: glitch-subtle 2s infinite linear reverse;
+}
+.header::after {
+    left: -3px; text-shadow: -2px 0 var(--neon-purple);
+    animation: glitch-subtle 2.5s infinite linear;
+}
+
+.wish-text {
+    font-size: 1.6em; margin: 25px 0;
+}
+
+.hidden-message {
+    font-size: 1.1em; color: #aaa; margin-top: 15px;
+    opacity: 0; transition: opacity 2s ease-in-out;
+}
+.hidden-message.visible { opacity: 1; }
+
+.interactive-heart {
+    font-size: 3em; cursor: pointer; margin-top: 20px;
+    color: var(--neon-pink);
+    transition: transform 0.2s ease-in-out, text-shadow 0.2s;
+}
+.interactive-heart:hover {
+    transform: scale(1.1); text-shadow: 0 0 15px var(--glow-color);
+}
+.interactive-heart.beating { animation: beat 0.5s ease-in-out; }
+
+.status-log-container {
+    margin-top: 30px; font-size: 0.8em; color: var(--neon-blue); height: 20px;
+}
+
+.cursor { animation: blink 1s step-end infinite; }
+
+.trademark {
+    position: fixed; bottom: 15px; right: 20px;
+    font-size: 1em; color: #555; z-index: 5;
+}
+
+/* --- Music Controls --- */
+#music-controls {
+    position: fixed; bottom: 15px; left: 20px; z-index: 5;
+}
+#play-pause-btn {
+    background: none; border: 1px solid var(--neon-pink);
+    color: var(--neon-pink); font-family: 'VT323', monospace;
+    font-size: 1em; padding: 5px 10px; cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+#play-pause-btn:hover {
+    background: var(--neon-pink); color: var(--background-color);
+}
+
+/* --- Memory Fragments --- */
+.memory-fragment {
+    position: absolute;
+    pointer-events: none;
+    font-size: 1em;
+    z-index: 99;
+    animation: fade-out-up 2s linear forwards;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* --- Keyframes --- */
+@keyframes glitch { 2%,64%{transform:translate(3px,0) skew(0deg)}4%,60%{transform:translate(-3px,0) skew(0deg)}62%{transform:translate(0,0) skew(5deg)}}
+@keyframes glitch-subtle { 0%{clip-path:inset(80% 0 15% 0)}20%{clip-path:inset(40% 0 55% 0)}40%{clip-path:inset(18% 0 2% 0)}60%{clip-path:inset(93% 0 1% 0)}80%{clip-path:inset(57% 0 30% 0)}100%{clip-path:inset(2% 0 88% 0)}}
+@keyframes border-flicker { 0%,18%,22%,25%,53%,57%,100%{box-shadow:0 0 20px var(--glow-color),0 0 30px var(--glow-color) inset}20%,24%,55%{box-shadow:none}}
+@keyframes beat { 0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+@keyframes blink { from, to { opacity: 1 } 50% { opacity: 0 } }
+@keyframes fade-out-up {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-50px); }
+}
+@keyframes screen-glitch-effect {
+    0% { transform: translate(0); }
+    10% { transform: translate(-5px, -5px); }
+    20% { transform: translate(5px, 5px); }
+    30% { transform: translate(-5px, 5px); }
+    40% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, -5px); }
+    60% { transform: translate(5px, 5px); }
+    70% { transform: translate(-5px, 5px); }
+    80% { transform: translate(5px, -5px); }
+    90% { transform: translate(-5px, -5px); }
+    100% { transform: translate(0); }
+}

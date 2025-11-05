@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Halls</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Spectral+SC&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- AUDIO -->
+  <audio id="bg-audio" loop>
+    <source src="audio/scaryvideo.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- START OVERLAY -->
+  <div id="start-overlay">
+    <div class="overlay-content">
+      <h1>Enter Her Buns</h1>
+      <button id="start-btn">Begin</button>
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#story">The Story</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#whispers">Whispers</a></li>
+        <li><a href="#exit">Exit</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="story" class="parallax">
+    <h1>Knight still walks these halls…</h1>
+  </section>
+
+  <section id="rooms">
+    <div class="gallery">
+      <img src="images/room1.jpg" alt="Disturbing Room" />
+      <img src="images/room2.jpg" alt="Shadowy Hallway" />
+      <img src="images/room3.jpg" alt="Creepy Doll" />
+    </div>
+  </section>
+
+  <section id="whispers">
+    <div class="ghost-text">
+      <p data-text="They told me to leave, but I stayed.">They told me to leave, but I stayed.</p>
+      <p data-text="Now they won’t let me go.">Now they won’t let me go.</p>
+    </div>
+  </section>
+
+  <section id="exit">
+    <button class="glitch-btn">Leave This Place</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ruby</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Canvas for the falling characters background -->
+    <canvas id="matrix-bg"></canvas>
+
+    <div class="container">
+        
+        <div class="header" data-text="Sweet 17">
+            Sweet 17
+        </div>
+        
+        <p class="wish-text">
+            Happy Birthday, Ruby.
+        </p>
+        
+        <!-- This message will appear after a delay -->
+        <p class="hidden-message" id="hiddenMessage">
+            I would've worked on this harder if we were still in contact... but we're not.
+        </p>
+        
+        <div class="interactive-heart" id="interactiveHeart">
+            &lt;3
+        </div>
+        
+        <!-- Auto-typing status log -->
+        <div class="status-log-container">
+            <span id="status-log"></span><span class="cursor">_</span>
+        </div>
+        
+    </div>
+
+    <!-- Trademark -->
+    <div class="trademark">
+        raffi™
+    </div>
+
+    <!-- Click sound effect -->
+    <audio id="clickSound" src="data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU0AAAAA"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

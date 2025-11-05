@@ -1,0 +1,66 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: silver; /* Silver background color */
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #000; /* Black background color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100vh - 160px); /* Adjust max-height based on header and footer height */
+}
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+}
+
+/* Heading styles */
+h2 {
+    color: #000; /* Black color */
+    border-bottom: 2px solid #000; /* Black border */
+    padding-bottom: 5px;
+}
+
+/* Paragraph styles */
+p {
+    line-height: 1.6;
+}
+
+/* Footer styles */
+footer {
+    background-color: #000; /* Black background color */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Change position to relative */
+    bottom: 0;
+    width: 100%;
+    clear: both; /* Clear floats */
+}
+
+/* Button styles */
+.ginger-tribute-button {
+    background-color: #000; /* Black background color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ginger-tribute-button:hover {
+    background-color: #333; /* Darker shade of black on hover */
+}

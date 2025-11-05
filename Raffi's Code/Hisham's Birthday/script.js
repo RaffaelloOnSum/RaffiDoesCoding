@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const introLines = [
         "Booting system...",
         "Accessing memory core...",
-        "Searching for file: ruby_bday_archive.dat...",
+        "Searching for file: hisham_bday_archive.dat...",
         "File found.",
         "Establishing connection..."
     ];
@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        let characters = '♥*+<317RBY'.split('');
+        let characters = 'HISHAM*+<322'.split('');
         let fontSize = 16;
         let columns = canvas.width / fontSize;
         let drops = Array.from({ length: columns }).fill(1);
-        const neonColors = ['#F400A1', '#00BFFF', '#9400D3', '#EAEAEA'];
+        const neonColors = ['#FF1818', '#FFFFFF', '#B20000'];
 
         function drawMatrix() {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -75,9 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- 5. Auto-Typing Status Log ---
         const statusLogElement = document.getElementById('status-log');
         const logMessages = ["// connection unstable...", "// nostalgia protocol running...", "// happy_birthday.exe executed."];
-        let messageIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+        let messageIndex = 0; charIndex = 0; let isDeleting = false;
         function typeStatus() {
             const currentMessage = logMessages[messageIndex];
             if (isDeleting) {
@@ -92,18 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
         typeStatus();
         
         // --- 6. Interactive Memory Fragments ---
-        const memories = ["remember that time...", "that song...", "11:11", "the promise", "used to be easy", "sorry"];
+        const memories = ["long distance sucks", "remember that call?", "the good old days", "future plans", "miss you bro", "22!"];
         document.body.addEventListener('click', (event) => {
-            if (event.target.id === 'play-pause-btn' || event.target.id === 'interactiveHeart') return; // Don't trigger on buttons
+            if (event.target.closest('.container') || event.target.id === 'play-pause-btn') return;
             let fragment = document.createElement('div');
             fragment.className = 'memory-fragment';
             fragment.style.left = `${event.clientX - 50}px`;
             fragment.style.top = `${event.clientY - 20}px`;
             fragment.textContent = memories[Math.floor(Math.random() * memories.length)];
             document.body.appendChild(fragment);
-            setTimeout(() => {
-                fragment.remove();
-            }, 2000);
+            setTimeout(() => { fragment.remove(); }, 2000);
         });
 
         // --- 7. Music Player ---
@@ -111,12 +107,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const playBtn = document.getElementById('play-pause-btn');
         playBtn.addEventListener('click', () => {
             if (song.paused) {
-                song.play();
+                song.play().catch(error => console.log("Audio play failed: " + error));
                 playBtn.textContent = "Pause Song";
             } else {
                 song.pause();
                 playBtn.textContent = "Play Song";
             }
         });
+
+        // Auto-play music on first interaction
+        document.body.addEventListener('click', () => {
+            if (song.paused && playBtn.textContent === "Play Song") {
+                song.play().catch(error => console.log("Audio play failed: " + error));
+                playBtn.textContent = "Pause Song";
+            }
+        }, { once: true });
     }
 });
